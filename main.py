@@ -258,6 +258,7 @@ async def on_message(message):
     embedVar.add_field(name="Trigger:",value = phrase,inline=False)
     embedVar.add_field(name="Entire Message:",value = total,inline=False)
     embedVar.set_footer(text="Autofilter | Cybersaur")
+    await channel.send(embed=embedVar)
     if botAdminSlur:
         embedVar.set_footer(text="BotAdmin violation - the violating message was not deleted.")
 
@@ -370,6 +371,20 @@ async def dm(ctx,*args):
   tosend2 = "**📧 Sent to "+"<@"+str(userID)+"> :** "+messagec+"\nSent by: <@"+str(ctx.message.author)+">"
   await ctx.send(tosend2)
   await ctx.message.delete()
+
+#placeholders
+###########################################
+@bot.command()
+async def kick(ctx,*args):
+  if (str(ctx.author.id) not in botadmins):
+    await ctx.send("kick moment")
+    return
+@bot.command()
+async def ban(ctx,*args):
+  if (str(ctx.author.id) not in botadmins):
+    await ctx.send("ban moment")
+    return
+###########################################
 
 @bot.command()
 async def bark(ctx):

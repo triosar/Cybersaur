@@ -17,7 +17,10 @@ Contribution will be welcome at a later point in time, but currently any pull re
 
 
 # Credits
-A credits list is included in the code, as part of the `>credits` command.
+**Triosar** - Bot creator and developer.  
+**P3tray** - Helped with the development of other bots in the "Novasaur" family, including code used in this bot.  
+
+# License
 
 Cybersaur © 2021 by Triosar is licensed under the MIT license.  
 This applies solely to the code contained within this repository, and does not grant access to Cybersaur's bot account or any associated databases/profiles/etc used in the operation of the Cybersaur bot.  

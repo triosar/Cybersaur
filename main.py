@@ -110,7 +110,7 @@ async def checkFriends(username):
 
 # logging function for any kind of "admin" command
 def adminLog(userPing,fullmessage,comtype,server,channel):
-    embedVar = discord.Embed(title="Admin Command Ran", description="",color=000000)
+    embedVar = discord.Embed(title="Admin Command Ran", description="",color=0x03a1fc)
     embedVar.add_field(name="User", value=userPing, inline=False)
     embedVar.add_field(name="Command Type", value=comtype, inline=False)
     embedVar.add_field(name="Full Command", value=fullmessage, inline=False)
@@ -147,7 +147,7 @@ async def on_ready():
     print(f'{bot.user.name} has connected to Discord!')
     await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="you type! | Prefix is 'c>'!"))
     channel = bot.get_channel(854711573490302976)
-    embedVar2 = discord.Embed(title="Bot connected to discord",description=f'Bot successfully connected to Discord at {time.asctime()}.',color=000000)
+    embedVar2 = discord.Embed(title="Bot connected to discord",description=f'Bot successfully connected to Discord at {time.asctime()}.',color=0x03a1fc)
     embedVar2.set_footer(text="Hello world | Cybersaur")
     await channel.send(embed=embedVar2)
 
@@ -216,7 +216,7 @@ async def on_message(message):
 #         dynoType = "Warn Deletion"
 
 #       if dynoType != None:
-#         embedVar = discord.Embed(title="Dyno Command Ran", description="",color=000000)
+#         embedVar = discord.Embed(title="Dyno Command Ran", description="",color=0x03a1fc)
 #         embedVar.add_field(name="Username", value="<@"+str(message.author.id)+">", inline=False)
 #         embedVar.add_field(name="Action Type", value=dynoType, inline=False)
 #         embedVar.add_field(name="Full Message", value=str(message.content), inline=False)
@@ -229,7 +229,7 @@ async def on_message(message):
     user = str(message.author.id)
     user = "<@"+user+">"
 
-    embedVar = discord.Embed(title="New Cybersaur DM", description="",color=0x00cc00)
+    embedVar = discord.Embed(title="New Cybersaur DM", description="",color=0x03a1fc)
 
     embedVar.add_field(name="Username:", value=(user), inline=False)
     embedVar.add_field(name="Message:",value = message.content,inline=False)
@@ -448,7 +448,7 @@ async def untrelloban(ctx):
 
 @bot.command()
 async def about(ctx):
-  embedVar = discord.Embed(title="<:triodoge:784565546036232192>", description="",color=000000)
+  embedVar = discord.Embed(title="<:triodoge:784565546036232192>", description="",color=0x03a1fc)
   embedVar.add_field(name="About", value="test", inline=False)
   embedVar.set_footer(text="About | Cybersaur")
   await ctx.send(embed=embedVar)
@@ -512,7 +512,7 @@ async def blsearch(ctx,*args):
         print("no")
   h = await ctx.send("Done!")
   
-  embedVar = discord.Embed(title=robloxName,color=000000)
+  embedVar = discord.Embed(title=robloxName,color=0x03a1fc)
   embedVar.add_field(name="Trellobanned?", value=(str(trelloBan)), inline=False)
   if BLBan == True:
     if (str(stage) == "1") or (str(stage) == "2") or (str(stage) == "3"):
@@ -544,7 +544,7 @@ async def blsearch(ctx,*args):
   
 @bot.command()
 async def poll(ctx,*args):
-  embed = discord.Embed(title=' '.join(args),description=f'Sent by: {ctx.message.author}',color=000000)  ## Added embed instead of message.
+  embed = discord.Embed(title=' '.join(args),description=f'Sent by: {ctx.message.author}',color=0x03a1fc)  ## Added embed instead of message.
   embed.set_footer(text="Poll | Cybersaur")
   msg = await ctx.send(embed=embed)
   await msg.add_reaction("✅")
@@ -618,7 +618,7 @@ async def granks(ctx,*args):
           await ctx.send("Couldn't get group ranks.")
           return
   print(groupObj.name)
-  embedVar = discord.Embed(title=name,color=000000)
+  embedVar = discord.Embed(title=name,color=0x03a1fc)
   for x in roles:
     name = (x.name)
     val = (x.rank)
@@ -653,7 +653,7 @@ async def bloxsearch(ctx,*args):
   else:
     link = "https://www.roblox.com/users/"+r["primaryAccount"]+"/profile"
 
-    embedVar = discord.Embed(title="Bloxlink Lookup", description="",color=000000)
+    embedVar = discord.Embed(title="Bloxlink Lookup", description="",color=0x03a1fc)
     
     embedVar.add_field(name="Discord User", value="<@"+str(discID)+">", inline=False)
     RS = os.getenv('ROBLOSECURITY')

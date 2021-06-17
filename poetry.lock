@@ -166,11 +166,11 @@ description = "The next generation HTTP client."
 name = "httpx"
 optional = false
 python-versions = ">=3.6"
-version = "0.18.1"
+version = "0.18.2"
 
 [package.dependencies]
 certifi = "*"
-httpcore = ">=0.13.0,<0.14.0"
+httpcore = ">=0.13.3,<0.14.0"
 sniffio = "*"
 
 [package.dependencies.rfc3986]
@@ -325,7 +325,7 @@ idna2008 = ["idna"]
 [[package]]
 category = "main"
 description = "ro.py is a Python wrapper for the Roblox web API."
-name = "ro-py"
+name = "roblox"
 optional = false
 python-versions = ">=3.6"
 version = "1.2.0.5"
@@ -387,7 +387,7 @@ idna = ">=2.0"
 multidict = ">=4.0"
 
 [metadata]
-content-hash = "58d4e3c3b39a98ae07c0a62e7bd8b4f44eb41bd448936f0bf09c5276f4543678"
+content-hash = "38bb66afdc2f95e443af95803877dc3c5404e19948ee4c7d6f6b2e97179f43a4"
 python-versions = "^3.8"
 
 [metadata.files]
@@ -479,8 +479,8 @@ httpcore = [
     {file = "httpcore-0.13.6.tar.gz", hash = "sha256:b0d16f0012ec88d8cc848f5a55f8a03158405f4bca02ee49bc4ca2c1fda49f3e"},
 ]
 httpx = [
-    {file = "httpx-0.18.1-py3-none-any.whl", hash = "sha256:ad2e3db847be736edc4b272c4d5788790a7e5789ef132fc6b5fef8aeb9e9f6e0"},
-    {file = "httpx-0.18.1.tar.gz", hash = "sha256:0a2651dd2b9d7662c70d12ada5c290abcf57373b9633515fe4baa9f62566086f"},
+    {file = "httpx-0.18.2-py3-none-any.whl", hash = "sha256:979afafecb7d22a1d10340bafb403cf2cb75aff214426ff206521fc79d26408c"},
+    {file = "httpx-0.18.2.tar.gz", hash = "sha256:9f99c15d33642d38bce8405df088c1c4cfd940284b4290cacbfb02e64f4877c6"},
 ]
 humanfriendly = [
     {file = "humanfriendly-9.2-py2.py3-none-any.whl", hash = "sha256:332da98c24cc150efcc91b5508b19115209272bfdf4b0764a56795932f854271"},
@@ -646,9 +646,9 @@ rfc3986 = [
     {file = "rfc3986-1.5.0-py2.py3-none-any.whl", hash = "sha256:a86d6e1f5b1dc238b218b012df0aa79409667bb209e58da56d0b94704e712a97"},
     {file = "rfc3986-1.5.0.tar.gz", hash = "sha256:270aaf10d87d0d4e095063c65bf3ddbc6ee3d0b226328ce21e036f946e421835"},
 ]
-ro-py = [
-    {file = "ro-py-1.2.0.5.tar.gz", hash = "sha256:8b5372d34e99ec0831911b63351ec780331510506a6d4ef2cf74e7f546fbd366"},
-    {file = "ro_py-1.2.0.5-py3-none-any.whl", hash = "sha256:e382e817ab1c28d1ea2bc72032819258fe6cd6a82af5b6ecf94dfdd0b6d526ef"},
+roblox = [
+    {file = "roblox-1.2.0.5-py3-none-any.whl", hash = "sha256:3da58838216e9e296947d5b71df3709b3ba2a2275fb3409166570e3af771b5d3"},
+    {file = "roblox-1.2.0.5.tar.gz", hash = "sha256:ec29b755e38f054c206ea92dfea47a3bd8a9a7f61e8a011df8da58d9a77388ff"},
 ]
 sniffio = [
     {file = "sniffio-1.2.0-py3-none-any.whl", hash = "sha256:471b71698eac1c2112a40ce2752bb2f4a4814c22a54a3eed3676bc0f5ca9f663"},

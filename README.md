@@ -7,6 +7,8 @@ Contribution will be welcome at a later point in time, but currently any pull re
 
 ***Note: when viewing the `main.py` file, there will be naughty words in the filtered words list!***
 # Planned Features
+ - Mass tidying-up of all the code - might even rewrite from scratch!
+
 - Basic filter
 - Ability for devs to be able to gameban someone from discord
 - Proper bug reports command

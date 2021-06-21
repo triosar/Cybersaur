@@ -177,7 +177,7 @@ async def on_message(message):
     embedVar.set_footer(text="Autofilter | Cybersaur")
     if await botAdminCheck(message.author,message.guild):
         embedVar.set_footer(text="BotAdmin violation - the violating message was not deleted.")
-    await bot.get_channel(854711573490302976).send(embedVar)
+    await bot.get_channel(854711573490302976).send(embed=embedVar)
       
     response = "Please don't use words like **"+phrase+"**!"
     try:

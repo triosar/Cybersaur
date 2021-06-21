@@ -237,7 +237,7 @@ async def unban(ctx):
 
 @bot.command()
 async def trelloban(ctx):
-  if await botAdminCheck < 2: 
+  if await botAdminCheck() < 2: 
     await ctx.send("You are not authorised to perform this command.")
     return
   await ctx.send("nice")

@@ -59,7 +59,7 @@ async def botAdminCheck(user,guild):
 def clearUser(name):
   TRELLO_APP_KEY = os.getenv('TRELLO_APP_KEY')
   TOKEN = os.getenv('TOKEN')
-  listID = "6093ccae8f0a0a4e409fa1ce"
+  listID = "600ed147a982530da7b48b87"
   
   trello = TrelloApi(TRELLO_APP_KEY, TOKEN)
 

@@ -156,7 +156,7 @@ async def on_message(message):
   elif slurCheck(message.content):
     botAdminSlur = False
     slurColour = 000000
-    if botAdminCheck(message.author,message.guild):
+    if await botAdminCheck(message.author,message.guild):
       botAdminSlur = True
       slurColour = 0xc20000
     phrase = slurCheck(message.content)

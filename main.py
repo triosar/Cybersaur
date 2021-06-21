@@ -208,5 +208,26 @@ async def eval(ctx, *, code):
     adminLog("<@"+str(ctx.message.author.id)+">",str(ctx.message.content),"Code Execution",ctx.message.guild,ctx.message.channel)
 
 
+@bot.command()
+async def kick(ctx):
+  if not await botAdminCheck():
+    await ctx.send("You are not authorised to run this command!")
+    return
+  await ctx.send("epic kick moment")
+
+@bot.command()
+async def ban(ctx):
+  if not await botAdminCheck():
+    await ctx.send("You are not authorised to run this command!")
+    return
+  await ctx.send("epic ban moment")
+
+@bot.command()
+async def unban(ctx):
+  if not await botAdminCheck():
+    await ctx.send("You are not authorised to run this command!")
+    return
+  await ctx.send("epic unban moment")
+
 keep_alive.keep_alive()
 bot.run(TOKEN)

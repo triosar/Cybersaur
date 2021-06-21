@@ -41,16 +41,6 @@ TRELLO_APP_KEY = os.getenv('TRELLO_APP_KEY')
 
 #define functions
 async def botAdminCheck(user,guild):
-  toReturn = False
-  roleList = []
-  for roleName in botAdminNames:
-    roleList.append(discord.utils.find(lambda r: r.name == roleName, guild.roles))
-  for role in roleList:
-    if role in user.roles:
-      toReturn = True
-  return toReturn
-
-async def botAdminCheck(user,guild):
   staffRole = discord.utils.find(lambda r: r.name == "🚀Staff Team🚀", guild.roles)
   devRole = discord.utils.find(lambda r: r.name == "🔨Developer🔨", guild.roles)
   creatorRole = discord.utils.find(lambda r: r.name == "🌌Creator🌌", guild.roles)

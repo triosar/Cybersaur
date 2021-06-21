@@ -247,5 +247,12 @@ async def adminlevels(ctx):
   response = "Triosar: 4\nCreator: 3\nDevs: 2\nStaff: 1\nNormies: 0"
   await ctx.send(response)
 
+@bot.command()
+async def bansearch(ctx):
+  if not await botAdminCheck(ctx.message.author,ctx.message.guild):
+    await ctx.send("You are not authorised to run this command.")
+    return
+  await ctx.send("ban search moment")
+
 keep_alive.keep_alive()
 bot.run(TOKEN)

@@ -50,6 +50,22 @@ async def botAdminCheck(user,guild):
       toReturn = True
   return toReturn
 
+async def botAdminCheck(user,guild):
+  staffRole = discord.utils.find(lambda r: r.name == "🚀Staff Team🚀", guild.roles)
+  devRole = discord.utils.find(lambda r: r.name == "🔨Developer🔨", guild.roles)
+  creatorRole = discord.utils.find(lambda r: r.name == "🌌Creator🌌", guild.roles)
+
+  if str(user.id) == "314394344465498122":
+    return 4
+  if creatorRole in user.roles:
+    return 3
+  if devRole in user.roles:
+    return 2
+  if staffRole in user.roles:
+    return 1
+  return False # i.e. not any level of admin
+
+
 def clearUser(name):
   TRELLO_APP_KEY = os.getenv('TRELLO_APP_KEY')
   TOKEN = os.getenv('TOKEN')
@@ -228,6 +244,14 @@ async def unban(ctx):
     await ctx.send("You are not authorised to run this command!")
     return
   await ctx.send("epic unban moment")
+
+@bot.command()
+async def trelloban(ctx):
+  if await botAdminCheck < 2: 
+    await ctx.send("You are not authorised to perform this command.")
+    return
+  await ctx.send("nice")
+  
 
 keep_alive.keep_alive()
 bot.run(TOKEN)

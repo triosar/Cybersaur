@@ -216,28 +216,28 @@ async def eval(ctx, *, code):
 
 @bot.command()
 async def kick(ctx):
-  if not await botAdminCheck():
+  if not await botAdminCheck(ctx.message.author,ctx.message.guild):
     await ctx.send("You are not authorised to run this command!")
     return
   await ctx.send("epic kick moment")
 
 @bot.command()
 async def ban(ctx):
-  if not await botAdminCheck():
+  if not await botAdminCheck(ctx.message.author,ctx.message.guild):
     await ctx.send("You are not authorised to run this command!")
     return
   await ctx.send("epic ban moment")
 
 @bot.command()
 async def unban(ctx):
-  if not await botAdminCheck():
+  if not await botAdminCheck(ctx.message.author,ctx.message.guild):
     await ctx.send("You are not authorised to run this command!")
     return
   await ctx.send("epic unban moment")
 
 @bot.command()
 async def trelloban(ctx):
-  if await botAdminCheck() < 2: 
+  if await botAdminCheck(ctx.message.author,ctx.message.guild) < 2: 
     await ctx.send("You are not authorised to perform this command.")
     return
   await ctx.send("nice")

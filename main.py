@@ -156,7 +156,7 @@ async def on_message(message):
   elif slurCheck(message.content):
     botAdminSlur = False
     slurColour = 000000
-    if botAdminCheck():
+    if botAdminCheck(message.author,message.guild):
       botAdminSlur = True
       slurColour = 0xc20000
     phrase = slurCheck(message.content)
@@ -175,7 +175,7 @@ async def on_message(message):
     embedVar.add_field(name="Trigger:",value = phrase,inline=False)
     embedVar.add_field(name="Entire Message:",value = total,inline=False)
     embedVar.set_footer(text="Autofilter | Cybersaur")
-    if await botAdminCheck():
+    if await botAdminCheck(message.author,message.guild):
         embedVar.set_footer(text="BotAdmin violation - the violating message was not deleted.")
     await bot.get_channel(854711573490302976).send(embedVar)
       
@@ -186,7 +186,7 @@ async def on_message(message):
       await message.channel.send("Watch your language, "+"<@"+str(message.author.id)+">.")
     finally:
       await message.add_reaction("😡")
-      if not await botAdminCheck():
+      if not await botAdminCheck(message.author,message.guild):
         await message.delete()
     return
 

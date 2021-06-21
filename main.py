@@ -193,5 +193,20 @@ async def on_message(message):
   if str(message.author.id) not in blacklist:
     await bot.process_commands(message)
 
+@bot.command()
+async def eval(ctx, *, code):
+    if (ctx.message.author.id) != 314394344465498122:
+      await ctx.send("Denied.")
+      return
+    str_obj = io.StringIO() #Retrieves a stream of data
+    try:
+        with contextlib.redirect_stdout(str_obj):
+            exec(code)
+    except Exception as e:
+        return await ctx.send(f"```{e.__class__.__name__}: {e}```")
+    await ctx.send(f'```{str_obj.getvalue()}```')
+    adminLog("<@"+str(ctx.message.author.id)+">",str(ctx.message.content),"Code Execution",ctx.message.guild,ctx.message.channel)
+
+
 keep_alive.keep_alive()
 bot.run(TOKEN)

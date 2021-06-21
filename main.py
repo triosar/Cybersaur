@@ -242,6 +242,10 @@ async def trelloban(ctx):
     return
   await ctx.send("nice")
   
+@bot.command()
+async def adminlevels(ctx):
+  response = "Triosar: 4\nCreator: 3\nDevs: 2\nStaff: 1\nNormies: 0"
+  await ctx.send(response)
 
 keep_alive.keep_alive()
 bot.run(TOKEN)

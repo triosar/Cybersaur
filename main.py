@@ -35,7 +35,7 @@ botAdminRoles = [736246472814624789, 776437222177374220, 747588419265233046]
 # creator, dev, staff
 
 load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
+DISCTOKEN = os.getenv('DISCORD_TOKEN')
 RS = os.getenv('ROBLOSECURITY')
 TRELLO_APP_KEY = os.getenv('TRELLO_APP_KEY')
 
@@ -255,4 +255,4 @@ async def bansearch(ctx):
   await ctx.send("ban search moment")
 
 keep_alive.keep_alive()
-bot.run(TOKEN)
+bot.run(DISCTOKEN)

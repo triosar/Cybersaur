@@ -254,5 +254,41 @@ async def bansearch(ctx):
     return
   await ctx.send("ban search moment")
 
+@bot.command()
+async def mockup(ctx):
+  if await botAdminCheck(ctx.message.author,ctx.message.guild) < 4: 
+    await ctx.send("You are not authorised to perform this command.")
+    return
+
+  embedVar = discord.Embed(color=0xEC7200)
+  embedVar.add_field(name=r"// Mod Call \\"+r"\\", value="A Mod Call has been sent from Pinewood Builders Tycoon\n--------------------------------------------------\n**REPORTER:** 249Grimawesome\n**SUSPECT:** 249Grimawesome\n**REPORT REASON:** Filter Abuse\n--------------------------------------------------\n**GAME LINK:** https://www.roblox.com/games/5436115608/\n--------------------------------------------------", inline=False)
+  embedVar.set_thumbnail(url="https://images-ext-2.discordapp.net/external/ZVEJrowG97UBjZ0HuEL_nvXRxKg9VsyJBvW8tRjp-Ec/%3Fwidth%3D676%26height%3D676/https/media.discordapp.net/attachments/747579977532440746/780243500771180565/asfasdda1_0052.jpg?width=674&height=674")
+
+
+  x = await ctx.send(embed=embedVar)
+  await x.add_reaction("✅")
+  await x.add_reaction("❌")
+
+  embedVar = discord.Embed(color=0xa30800)
+  embedVar.add_field(name=r"❌   // Mod Call \\"+r"\\   ❌", value="A Mod Call has been sent from Pinewood Builders Tycoon\n--------------------------------------------------\n**REPORTER:** 249Grimawesome\n**SUSPECT:** 249Grimawesome\n**REPORT REASON:** Filter Abuse\n--------------------------------------------------\n**GAME LINK:** https://www.roblox.com/games/5436115608/\n--------------------------------------------------", inline=False)
+  embedVar.set_thumbnail(url="https://images-ext-2.discordapp.net/external/ZVEJrowG97UBjZ0HuEL_nvXRxKg9VsyJBvW8tRjp-Ec/%3Fwidth%3D676%26height%3D676/https/media.discordapp.net/attachments/747579977532440746/780243500771180565/asfasdda1_0052.jpg?width=674&height=674")
+  embedVar.add_field(name="Denial Reason",value="`Triosar` - Grim is very poopy.", inline=False)
+
+
+  x = await ctx.send(embed=embedVar)
+  await x.add_reaction("✅")
+  await x.add_reaction("❌")
+
+  embedVar = discord.Embed(color=0x00a300)
+  embedVar.add_field(name=r"✅   // Mod Call \\"+r"\\   ✅", value="A Mod Call has been sent from Pinewood Builders Tycoon\n--------------------------------------------------\n**REPORTER:** 249Grimawesome\n**SUSPECT:** 249Grimawesome\n**REPORT REASON:** Filter Abuse\n--------------------------------------------------\n**GAME LINK:** https://www.roblox.com/games/5436115608/\n--------------------------------------------------", inline=False)
+  embedVar.set_thumbnail(url="https://images-ext-2.discordapp.net/external/ZVEJrowG97UBjZ0HuEL_nvXRxKg9VsyJBvW8tRjp-Ec/%3Fwidth%3D676%26height%3D676/https/media.discordapp.net/attachments/747579977532440746/780243500771180565/asfasdda1_0052.jpg?width=674&height=674")
+  embedVar.add_field(name="Action Taken",value="`Triosar` - Grim has been fed to Gacha Reis :D", inline=False)
+
+
+  x = await ctx.send(embed=embedVar)
+  await x.add_reaction("✅")
+  await x.add_reaction("❌")
+
+
 keep_alive.keep_alive()
 bot.run(DISCTOKEN)

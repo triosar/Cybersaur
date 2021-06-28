@@ -105,6 +105,26 @@ async def on_ready():
       #await server.leave() #activate this to leave all servers
 
 @bot.event
+async def on_raw_reaction_add(payload):
+  if str(payload.channel_id) != "859046592350781450":
+    return
+  
+  if str(payload.emoji) != "🤖":
+    return
+
+  msgID = payload.message_id
+  channelID = payload.channel_id
+  channel = bot.get_channel(channelID)
+
+  msg = await channel.fetch_message(msgID)
+
+  embedVar = msg.embeds[0]
+  embedVar.add_field(name="Approved moment", value="approved by the holy doge 🤖", inline=False)
+  embedVar.color = 0x00a300
+  embedVar.title = r"✅   // Mod Call \\"+r"\\   ✅"
+  await channel.send(embed=embedVar)
+
+@bot.event
 async def on_message(message):
 
   if message.author == bot.user:
@@ -289,6 +309,16 @@ async def mockup(ctx):
   await x.add_reaction("✅")
   await x.add_reaction("❌")
 
+@bot.command()
+async def mockup2(ctx):
+  if await botAdminCheck(ctx.message.author,ctx.message.guild) < 4: 
+    await ctx.send("You are not authorised to perform this command.")
+    return
+  embedVar = discord.Embed(title = r"// Mod Call \\"+r"\\",color=0xEC7200)
+  embedVar.add_field(name="** **", value="A Mod Call has been sent from Pinewood Builders Tycoon\n--------------------------------------------------\n**REPORTER:** 249Grimawesome\n**SUSPECT:** 249Grimawesome\n**REPORT REASON:** Filter Abuse\n--------------------------------------------------\n**GAME LINK:** https://www.roblox.com/games/5436115608/\n--------------------------------------------------", inline=False)
+  embedVar.set_thumbnail(url="https://images-ext-2.discordapp.net/external/ZVEJrowG97UBjZ0HuEL_nvXRxKg9VsyJBvW8tRjp-Ec/%3Fwidth%3D676%26height%3D676/https/media.discordapp.net/attachments/747579977532440746/780243500771180565/asfasdda1_0052.jpg?width=674&height=674")
+
+  x = await ctx.send(embed=embedVar)
 
 keep_alive.keep_alive()
 bot.run(DISCTOKEN)

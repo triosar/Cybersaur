@@ -28,7 +28,7 @@ blacklist = [] # bot blacklist
 intents = discord.Intents().all()
 bot = commands.Bot(command_prefix='c>',intents=intents)
 
-badwords = ['nigger','niggers','nibber','nigga','nibba','faggot','faget',' fag ','fagging','fagot','mussie','mossie',' cum','ejaculate','jerk  of','lezzo','lezbo','lezzer','lezer','lezza','leza','masturbat','molest','porn', ' rape ','rimjob','rimming','blowjob','sextoy','skank','slut','sperm','sodom','tranny','tranni','trany','trani',' wank',' wog ','retard','f@g','re3tard','cunt','c u m',' c u m','hentai','ahegao','cocaine','crackhead','whore','spunk']
+badwords = ['testword','nigger','niggers','nibber','nigga','nibba','faggot','faget',' fag ','fagging','fagot','mussie','mossie',' cum','ejaculate','jerk  of','lezzo','lezbo','lezzer','lezer','lezza','leza','masturbat','molest','porn', ' rape ','rimjob','rimming','blowjob','sextoy','skank','slut','sperm','sodom','tranny','tranni','trany','trani',' wank',' wog ','retard','f@g','re3tard','cunt','c u m',' c u m','hentai','ahegao','cocaine','crackhead','whore','spunk']
 
 botAdminNames = ["🌌Creator🌌", "🔨Developer🔨", "🚀Staff Team🚀"]
 botAdminRoles = [736246472814624789, 776437222177374220, 747588419265233046]
@@ -79,7 +79,7 @@ def slurCheck(phrase):
   return wordstatus
 
 def adminLog(userPing,fullmessage,comtype,server,channel):
-    embedVar = discord.Embed(title="Admin Command Ran", description="",color=000000)
+    embedVar = discord.Embed(title="Admin Command Ran", description="",color=0x0090ff)
     embedVar.add_field(name="User", value=userPing, inline=False)
     embedVar.add_field(name="Command Type", value=comtype, inline=False)
     embedVar.add_field(name="Full Command", value=fullmessage, inline=False)
@@ -93,9 +93,9 @@ def adminLog(userPing,fullmessage,comtype,server,channel):
 @bot.event
 async def on_ready():
     print(f'{bot.user.name} has connected to Discord!')
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="you type! | Prefix is '>'!"))
+    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="you type! | Prefix is 'c>'!"))
     channel = bot.get_channel(854711573490302976)
-    embedVar2 = discord.Embed(title="Bot connected to Discord",description=f'Bot successfully connected to Discord at {time.asctime()}.',color=000000)
+    embedVar2 = discord.Embed(title="Bot connected to Discord",description=f'Bot successfully connected to Discord at {time.asctime()}.',color=0x0090ff)
     embedVar2.set_footer(text="Hello world | Cybersaur")
     await channel.send(embed=embedVar2)
 
@@ -159,7 +159,7 @@ async def on_message(message):
         dynoType = "Warn Deletion"
 
       if dynoType != None:
-        embedVar = discord.Embed(title="Dyno Command Ran", description="",color=000000)
+        embedVar = discord.Embed(title="Dyno Command Ran", description="",color=0x0090ff)
         embedVar.add_field(name="Username", value="<@"+str(message.author.id)+">", inline=False)
         embedVar.add_field(name="Action Type", value=dynoType, inline=False)
         embedVar.add_field(name="Full Message", value=str(message.content), inline=False)
@@ -172,7 +172,7 @@ async def on_message(message):
     user = str(message.author.id)
     user = "<@"+user+">"
 
-    embedVar = discord.Embed(title="New Cybersaur DM", description="",color=0x00cc00)
+    embedVar = discord.Embed(title="New Cybersaur DM", description="",color=0x0090ff)
 
     embedVar.add_field(name="Username:", value=(user), inline=False)
     embedVar.add_field(name="Message:",value = message.content,inline=False)
@@ -181,7 +181,7 @@ async def on_message(message):
 
   elif slurCheck(message.content):
     botAdminSlur = False
-    slurColour = 000000
+    slurColour = 0x0090ff
     if await botAdminCheck(message.author,message.guild):
       botAdminSlur = True
       slurColour = 0xc20000
@@ -203,7 +203,7 @@ async def on_message(message):
     embedVar.set_footer(text="Autofilter | Cybersaur")
     if await botAdminCheck(message.author,message.guild):
         embedVar.set_footer(text="BotAdmin violation - the violating message was not deleted.")
-    await bot.get_channel(854711573490302976).send(embed=embedVar)
+    await bot.get_channel(864889372184936468).send(embed=embedVar)
       
     response = "Please don't use words like **"+phrase+"**!"
     try:
@@ -218,6 +218,40 @@ async def on_message(message):
 
   if str(message.author.id) not in blacklist:
     await bot.process_commands(message)
+
+@bot.command()
+async def say(ctx,*args):
+  if str(ctx.message.author) != "puptaco#3335":
+    return
+  await ctx.send(' '.join(args))
+  await ctx.message.delete()
+
+@bot.command()
+async def adminlevels(ctx):
+    embedVar = discord.Embed(color=0x0090ff)
+
+    embedVar.add_field(name="Admin Levels:", value=("<@314394344465498122> : 4\n<@&736246472814624789> : 3\n<@&776437222177374220> : 2\n<@&747588419265233046> : 1\nOthers : None"), inline=False)
+    await ctx.send(embed=embedVar)
+
+
+@bot.command()
+async def cmds(ctx):
+  embedVar = discord.Embed(color=0x0090ff)
+  embedVar.add_field(name="`c>trelloban`", value=("<@&776437222177374220>+: Trellobans the user. You are prompted to enter the username after entering the command."), inline=False)
+  embedVar.add_field(name="`c>kick [user]`", value=("<@&747588419265233046>+: Kicks the provided user. In development."), inline=False)
+  embedVar.add_field(name="`c>ban [user]`", value=("<@&747588419265233046>+: Bans the provided user. In development."), inline=False)
+  embedVar.add_field(name="`c>unban [user]`", value=("<@&747588419265233046>+: Unbans the provided user. In development."), inline=False)
+  embedVar.add_field(name="`c>bansearch [user]`", value=("<@&747588419265233046>+: Searches for the trelloban status of the provided user. In development."), inline=False)
+  await ctx.send(embed=embedVar)
+
+
+
+@bot.command()
+async def about(ctx):
+    embedVar = discord.Embed(color=0x0090ff)
+
+    embedVar.add_field(name="🤖", value=("Cybersaur is an auxiliary bot designed for use in the Cybernetic Studios community.\nIt has a variety of planned features, intended to help make staff's lives easier!\nDM <@314394344465498122> for any bugs, suggestions, or feedback.\nYou can contribute to this bot at https://github.com/triosar/Cybersaur !"), inline=False)
+    await ctx.send(embed=embedVar)
 
 @bot.command()
 async def eval(ctx, *, code):
@@ -236,48 +270,80 @@ async def eval(ctx, *, code):
 
 @bot.command()
 async def kick(ctx):
-  if not await botAdminCheck(ctx.message.author,ctx.message.guild):
-    await ctx.send("You are not authorised to run this command!")
+  if await botAdminCheck(ctx.message.author,ctx.message.guild) < 4: 
+    await ctx.send("You are not authorised to perform this command.\nRequired permission: `be Triosar`.")
     return
   await ctx.send("epic kick moment")
 
 @bot.command()
 async def ban(ctx):
-  if not await botAdminCheck(ctx.message.author,ctx.message.guild):
-    await ctx.send("You are not authorised to run this command!")
+  if await botAdminCheck(ctx.message.author,ctx.message.guild) < 4: 
+    await ctx.send("You are not authorised to perform this command.\nRequired permission: `be Triosar`.")
     return
   await ctx.send("epic ban moment")
 
 @bot.command()
 async def unban(ctx):
-  if not await botAdminCheck(ctx.message.author,ctx.message.guild):
-    await ctx.send("You are not authorised to run this command!")
+  if await botAdminCheck(ctx.message.author,ctx.message.guild) < 4: 
+    await ctx.send("You are not authorised to perform this command.\nRequired permission: `be Triosar.`")
     return
   await ctx.send("epic unban moment")
 
 @bot.command()
 async def trelloban(ctx):
   if await botAdminCheck(ctx.message.author,ctx.message.guild) < 2: 
-    await ctx.send("You are not authorised to perform this command.")
+    await ctx.send("You are not authorised to perform this command.\nRequired permission: `🔨Developer🔨` or higher.")
     return
-  await ctx.send("nice")
-  
-@bot.command()
-async def adminlevels(ctx):
-  response = "Triosar: 4\nCreator: 3\nDevs: 2\nStaff: 1\nNormies: 0"
-  await ctx.send(response)
+  TRELLO_APP_KEY = os.getenv('TRELLO_APP_KEY')
+  TOKEN = os.getenv('TOKEN')
+  #listID = "600ed147a982530da7b48b87" # cs admin board
+  listID = "60d0e57d4082b12004214eee" # nova admin board
+  cardPos = "bottom"
+
+  trello = TrelloApi(TRELLO_APP_KEY, TOKEN)
+  await ctx.send("Warning: this command will game-ban from all CS games using CS Lithium.")
+  await ctx.send("What is the ROBLOX username of the user to trelloban?")
+  msg = await bot.wait_for('message', check=lambda message: message.author == ctx.author)
+  username = str(msg.content)
+
+  RS = os.getenv('ROBLOSECURITY')
+  await ctx.send("Fetching Roblox instance...")
+  try:
+    roblox = Client(RS)
+  except:
+    await ctx.send("Something broke trying to connect to Roblox!")
+  try:
+    robloxUser = await roblox.get_user_by_username(username)
+  except:
+    await ctx.send("Error getting user - maybe you gave an invalid user... 🤔")
+    return
+  userID = robloxUser.id
+
+  userID = str(userID)
+
+  cardName = username + ":"+userID
+
+  await ctx.send("Sending request to Trello to add card.")
+  reason = "Not specified."
+  description = "__Discord-issued Trello Ban__\nIssuer: "+str(ctx.message.author.display_name)+"\nReason: "+reason
+  newCard = trello.cards.new(cardName, idList=listID, desc=description, pos=cardPos)
+  await ctx.send("Card created!\nCard details have been logged to the console.")
+  print(newCard)    #above returns json details of the card just created
+  await ctx.message.delete()
+  adminLog("<@"+str(ctx.message.author.id)+">",str(ctx.message.content),"Trelloban",ctx.message.guild,ctx.message.channel)
+
 
 @bot.command()
 async def bansearch(ctx):
   if not await botAdminCheck(ctx.message.author,ctx.message.guild):
-    await ctx.send("You are not authorised to run this command.")
+    await ctx.send("You are not authorised to run this command.\nRequired permission: `🚀Staff Team🚀` or higher.")
     return
   await ctx.send("ban search moment")
 
 @bot.command()
 async def mockup(ctx):
   if await botAdminCheck(ctx.message.author,ctx.message.guild) < 4: 
-    await ctx.send("You are not authorised to perform this command.")
+    await ctx.send("You are not authorised to perform this command.\nTesting command.")
     return
 
   embedVar = discord.Embed(color=0xEC7200)
@@ -312,7 +378,7 @@ async def mockup(ctx):
 @bot.command()
 async def mockup2(ctx):
   if await botAdminCheck(ctx.message.author,ctx.message.guild) < 4: 
-    await ctx.send("You are not authorised to perform this command.")
+    await ctx.send("You are not authorised to perform this command.\nTesting command.")
     return
   embedVar = discord.Embed(title = r"// Mod Call \\"+r"\\",color=0xEC7200)
   embedVar.add_field(name="** **", value="A Mod Call has been sent from Pinewood Builders Tycoon\n--------------------------------------------------\n**REPORTER:** 249Grimawesome\n**SUSPECT:** 249Grimawesome\n**REPORT REASON:** Filter Abuse\n--------------------------------------------------\n**GAME LINK:** https://www.roblox.com/games/5436115608/\n--------------------------------------------------", inline=False)

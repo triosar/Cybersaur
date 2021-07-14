@@ -3,14 +3,14 @@ Cybersaur is an indev bot that is part of the "Novasaur" family, designed for us
 
 It is maintained by Triosar.
 
-Contribution will be welcome at a later point in time, but currently any pull requests will likely be removed.
+You are welcome to contribute, if you so wish.
 
 ***Note: when viewing the `main.py` file, there will be naughty words in the filtered words list!***
-# Planned Features
- - Mass tidying-up of all the code - might even rewrite from scratch!
-
+# Current Features
 - Basic filter
 - Ability for devs to be able to gameban someone from discord
+
+# Planned Features
 - Proper bug reports command
 - Suggestions command
 - Some moderation/verification commands too

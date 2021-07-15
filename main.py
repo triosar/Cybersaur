@@ -20,6 +20,7 @@ from trello import TrelloApi
 import asyncio
 from ro_py import Client
 import traceback
+import logging
 
 serverlist = [] # server names
 slist = [] #server objects
@@ -27,6 +28,8 @@ blacklist = [] # bot blacklist
 
 intents = discord.Intents().all()
 bot = commands.Bot(command_prefix='c>',intents=intents)
+
+logging.basicConfig(format='%(filename)s: %(message)s',level=logging.INFO)
 
 badwords = ['testword','nigger','niggers','nibber','nigga','nibba','faggot','faget',' fag ','fagging','fagot','mussie','mossie',' cum','ejaculate','jerk  of','lezzo','lezbo','lezzer','lezer','lezza','leza','masturbat','molest','porn', ' rape ','rimjob','rimming','blowjob','sextoy','skank','slut','sperm','sodom','tranny','tranni','trany','trani',' wank',' wog ','retard','f@g','re3tard','cunt','c u m',' c u m','hentai','ahegao','cocaine','crackhead','whore','spunk']
 

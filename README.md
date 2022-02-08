@@ -1,4 +1,7 @@
 # Cybersaur
+
+# This project is no longer being worked on. You are welcome to reuse code as long as I am attributed. 
+
 Cybersaur is an indev bot that is part of the "Novasaur" family, designed for use in the Cybernetic Studios community.
 
 It is maintained by Triosar.
